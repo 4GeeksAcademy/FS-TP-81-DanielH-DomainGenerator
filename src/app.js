@@ -15,8 +15,9 @@ window.onload = function() {
     for (let j = 0; j < adj.length; j++) {
       for (let k = 0; k < noun.length; k++) {
         final.push(pronoun[i] + adj[j] + noun[k] + ".com");
-        let randomDomain = final[Math.floor(Math.random() * final.length)];
-        document.getElementById("domain").innerHTML = randomDomain;
+
+        document.getElementById("domain").innerHTML =
+          "<ul>" + final.map(domain => `<li>${domain}</li>`).join("") + "</ul>";
       }
     }
   }
